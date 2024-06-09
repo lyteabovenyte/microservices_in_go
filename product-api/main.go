@@ -16,7 +16,7 @@ func main() {
 	fmt.Println("listening...")
 
 	l := log.New(os.Stdout, "product-api", log.LstdFlags)
-	ph := handlers.NewProducts()
+	ph := handlers.NewProducts(l)
 
 	sm := http.NewServeMux() // new HTTP request multiplexer. to implement Handle func to match the pattern to specific handlers.
 	sm.Handle("/", ph)
